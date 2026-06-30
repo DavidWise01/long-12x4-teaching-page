@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Plain-language visual teaching page for a 12-by-4 harmonic arrangement with examples.">
+<meta name="theme-color" content="#06010a">
+<title>12 by 4 Field Guide</title>
+<style>
+:root{
+  --bg:#050009;--ink:#f8f3ff;--muted:#b9a9d3;--line:rgba(224,190,255,.22);
+  --violet:#9b5cff;--pink:#ff38e8;--cyan:#57e7ff;--green:#7dffc5;--gold:#ffd166;
+  --panel:rgba(255,255,255,.065)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 74% 10%,rgba(155,92,255,.24),transparent 32rem),radial-gradient(circle at 18% 35%,rgba(87,231,255,.09),transparent 26rem),radial-gradient(circle at 22% 82%,rgba(255,56,232,.15),transparent 28rem),linear-gradient(135deg,#020105,#090013 52%,#000);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 0 96%,rgba(155,92,255,.065) 97% 100%),linear-gradient(0deg,transparent 0 96%,rgba(155,92,255,.045) 97% 100%);background-size:32px 32px;mask-image:radial-gradient(circle,black,transparent 82%);z-index:0}
+header,main,footer{position:relative;z-index:1}.hero{min-height:86vh;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,70px);align-items:center;padding:clamp(24px,5vw,72px)}
+.badge{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);color:var(--muted);font-size:12px;letter-spacing:.16em;text-transform:uppercase;backdrop-filter:blur(14px)}
+.badge i{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan),0 0 40px var(--violet);animation:pulse 2.2s infinite ease-in-out}
+h1{margin:24px 0 18px;font-size:clamp(48px,8vw,112px);line-height:.84;letter-spacing:-.085em;text-transform:uppercase}.grad{background:linear-gradient(105deg,#fff,#eadbff 24%,var(--violet) 50%,var(--pink) 76%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,56,232,.23))}
+p{color:#cbbfe2;line-height:1.68;font-size:clamp(16px,1.5vw,19px);margin:0}.lead{max-width:66ch}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.button{border:1px solid var(--line);border-radius:999px;padding:12px 16px;color:var(--ink);text-decoration:none;background:linear-gradient(180deg,rgba(255,255,255,.105),rgba(255,255,255,.025));box-shadow:0 18px 60px rgba(0,0,0,.26);transition:.2s}.button:hover{transform:translateY(-2px);border-color:rgba(255,56,232,.68)}
+.orb-wrap{min-height:560px;position:relative;display:grid;place-items:center}.beam{position:absolute;left:-8%;top:48%;width:92%;height:8px;background:linear-gradient(90deg,transparent,rgba(155,92,255,.18),rgba(255,255,255,.92),rgba(87,231,255,.5),transparent);filter:blur(5px);transform:rotate(-8deg);animation:beam 5s ease-in-out infinite}
+.orb{width:min(520px,72vw);aspect-ratio:1;border-radius:50%;position:relative;overflow:hidden;background:radial-gradient(circle at 64% 26%,#fff 0 1.6%,transparent 8%),radial-gradient(circle at 50% 52%,rgba(255,56,232,.56),transparent 17%),radial-gradient(circle at 45% 45%,rgba(76,10,120,.62),rgba(5,0,13,.65) 56%,rgba(0,0,0,.76) 78%),linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.015));border:1px solid rgba(226,196,255,.28);box-shadow:inset -34px -42px 90px rgba(0,0,0,.68),inset 28px 22px 70px rgba(255,255,255,.08),0 0 90px rgba(155,92,255,.22),0 48px 140px rgba(0,0,0,.72);animation:float 8s ease-in-out infinite}
+.orb:before{content:"";position:absolute;inset:7%;border-radius:50%;background:repeating-linear-gradient(115deg,transparent 0 12px,rgba(210,170,255,.09) 13px 15px),repeating-linear-gradient(25deg,transparent 0 18px,rgba(255,56,232,.07) 19px 21px);mask-image:radial-gradient(circle,black,transparent 72%)}
+.orbit{position:absolute;inset:0;border-radius:50%;border:8px solid transparent;border-left-color:rgba(255,255,255,.75);border-right-color:rgba(255,56,232,.5);transform:rotateX(72deg) rotateZ(26deg);filter:drop-shadow(0 0 22px rgba(255,56,232,.45));animation:orbit 8s linear infinite}.gem{position:absolute;width:30%;aspect-ratio:1;left:35%;top:35%;border-radius:50%;background:radial-gradient(circle at 40% 70%,var(--cyan),transparent 12%),radial-gradient(circle at 50% 50%,rgba(255,56,232,.75),rgba(42,6,68,.86) 58%,rgba(0,0,0,.25));border:1px solid rgba(235,210,255,.36);box-shadow:inset 0 0 30px rgba(255,255,255,.12),0 0 56px rgba(255,56,232,.55);display:grid;place-items:center;font-size:clamp(42px,7vw,86px);font-weight:900;text-shadow:0 0 26px var(--pink)}
+section{padding:clamp(56px,8vw,110px) clamp(24px,5vw,72px)}.section-head{max-width:980px;margin-bottom:28px}h2{font-size:clamp(34px,5.2vw,72px);letter-spacing:-.06em;line-height:.92;margin:0 0 16px;text-transform:uppercase}h3{margin:0 0 10px;font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{grid-column:span 4;border:1px solid var(--line);border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.095),rgba(255,255,255,.026));box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 26px 76px rgba(0,0,0,.27);padding:22px;backdrop-filter:blur(16px);min-height:190px}.span-6{grid-column:span 6}.span-12{grid-column:span 12}.card p{font-size:16px}
+.arrangement{border:1px solid var(--line);border-radius:32px;background:rgba(0,0,0,.25);padding:18px;box-shadow:inset 0 0 40px rgba(155,92,255,.08)}
+.row{display:grid;grid-template-columns:90px repeat(4,1fr);gap:10px;margin:10px 0;align-items:stretch}.row-label{display:grid;place-items:center;border:1px solid rgba(224,190,255,.18);border-radius:16px;background:rgba(255,255,255,.035);color:#eadbff;font-weight:700}.slot{border:1px solid rgba(224,190,255,.15);border-radius:16px;padding:12px;min-height:74px;background:rgba(255,255,255,.032);display:flex;flex-direction:column;justify-content:center;gap:4px}.slot strong{font-size:18px}.slot span{color:var(--muted);font-size:13px}.slot.active{background:linear-gradient(180deg,rgba(87,231,255,.14),rgba(255,56,232,.07));border-color:rgba(87,231,255,.38);box-shadow:0 0 26px rgba(87,231,255,.08)}.slot.rest{opacity:.38}.note{margin-top:14px;color:var(--muted);font-size:14px}
+.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.example{border:1px solid var(--line);border-radius:28px;padding:22px;background:rgba(255,255,255,.045)}.example .icon{width:44px;height:44px;border-radius:16px;display:grid;place-items:center;margin-bottom:14px;background:linear-gradient(135deg,rgba(155,92,255,.5),rgba(255,56,232,.28));box-shadow:0 0 30px rgba(255,56,232,.18);font-size:22px}.bands{display:grid;gap:12px}.band{border:1px solid rgba(224,190,255,.16);border-radius:22px;padding:16px;background:rgba(255,255,255,.035);display:grid;grid-template-columns:180px 1fr;gap:16px;align-items:center}.band b{color:#fff}.band span{color:var(--muted)}
+footer{padding:34px clamp(24px,5vw,72px);color:var(--muted);border-top:1px solid rgba(224,190,255,.14);background:rgba(0,0,0,.28)}
+@keyframes pulse{50%{transform:scale(1.85);opacity:.55}}@keyframes float{50%{transform:translateY(-16px) rotateX(4deg) rotateY(6deg)}}@keyframes orbit{to{transform:rotateX(72deg) rotateZ(386deg)}}@keyframes beam{50%{opacity:.42;transform:rotate(-8deg) translateX(22px)}}
+@media(max-width:1000px){.hero{grid-template-columns:1fr}.orb-wrap{min-height:440px}.card,.span-6{grid-column:span 12}.examples{grid-template-columns:1fr}.row{grid-template-columns:1fr}.slot{min-height:auto}.band{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div>
+    <div class="badge"><i></i> Plain Guide // 12 by 4</div>
+    <h1><span class="grad">Twelve</span><br>Arranged Four Ways</h1>
+    <p class="lead">This page explains the pattern without code or formulas. Think of it as a wheel with twelve positions. Each position can face four ways, but only three are active at a time. The fourth is the quiet place, the rest point, or the observer gap.</p>
+    <div class="actions">
+      <a class="button" href="#arrangement">See Arrangement</a>
+      <a class="button" href="#examples">View Examples</a>
+    </div>
+  </div>
+  <div class="orb-wrap" aria-label="visual field">
+    <div class="beam"></div>
+    <div class="orb"><div class="orbit"></div><div class="gem">12</div></div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="section-head">
+    <h2>What it means</h2>
+    <p>There are twelve stations around the outside. Each station has four possible faces. Three faces are used for movement: left, center, right. The fourth face is the pause. That makes the system readable, because every active motion has a place to rest.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><h3>The twelve</h3><p>The twelve are the outer stations: like hours on a clock, rooms in a ring, or gates around a field.</p></article>
+    <article class="card"><h3>The four</h3><p>The four are orientations: entry, hold, exit, and rest. The rest face keeps the cycle from becoming noise.</p></article>
+    <article class="card"><h3>The three inside</h3><p>Each station carries three active choices: negative, neutral, positive. In plain terms: pull, hold, push.</p></article>
+  </div>
+</section>
+
+<section id="arrangement">
+  <div class="section-head">
+    <h2>12 × 4 arrangement</h2>
+    <p>Each row is one of the twelve stations. Each row has four faces. The first three are active. The fourth is intentionally quiet. So one row of twelve behaves like three active parts out of four.</p>
+  </div>
+  <div class="arrangement">
+    <div class="row"><div></div><div class="row-label">Face A</div><div class="row-label">Face B</div><div class="row-label">Face C</div><div class="row-label">Face D</div></div>
+    <div id="rows"></div>
+    <p class="note">Read across a row: active, active, active, rest. Read down a column: the same face repeating through all twelve stations.</p>
+  </div>
+</section>
+
+<section id="examples">
+  <div class="section-head">
+    <h2>Examples</h2>
+    <p>These examples show how the same pattern can be understood without technical language.</p>
+  </div>
+  <div class="examples">
+    <article class="example"><div class="icon">🕛</div><h3>Clock example</h3><p>Twelve stations are the hours. Four faces are morning, noon, evening, night. Three are active parts of the day; night is the reset.</p></article>
+    <article class="example"><div class="icon">🎵</div><h3>Music example</h3><p>Twelve stations are notes around a circle. Three faces are low, middle, high. The fourth face is silence, letting the next sound be heard clearly.</p></article>
+    <article class="example"><div class="icon">🧭</div><h3>Navigation example</h3><p>Twelve stations are checkpoints. Three faces are approach, align, depart. The fourth face is wait, so the path does not drift.</p></article>
+    <article class="example"><div class="icon">🌊</div><h3>Wave example</h3><p>The active faces are crest, center, trough. The quiet face is the node where the wave crosses back through balance.</p></article>
+    <article class="example"><div class="icon">💎</div><h3>Crystal example</h3><p>Twelve stations are lattice positions. Three faces are charge directions. The fourth face is the locked position that preserves shape.</p></article>
+    <article class="example"><div class="icon">👁️</div><h3>Observer example</h3><p>The system can move through three choices, but the quiet fourth face lets it check itself before repeating.</p></article>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>How to read it</h2>
+    <p>Do not read the page as arithmetic. Read it as a field guide for movement, pause, and return.</p>
+  </div>
+  <div class="bands">
+    <div class="band"><b>Across</b><span>One station showing its four faces.</span></div>
+    <div class="band"><b>Down</b><span>One face repeating through all twelve stations.</span></div>
+    <div class="band"><b>Around</b><span>The twelve stations forming a full cycle.</span></div>
+    <div class="band"><b>Inside</b><span>The three active states choosing pull, hold, or push.</span></div>
+    <div class="band"><b>Quiet face</b><span>The resting place that allows the next cycle to be clean.</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Final picture</h2>
+    <p>A clean machine-readable idea can still be explained simply: twelve stations, four faces, three active choices, one rest point. The result is a repeating structure that can move, pause, mirror, and return without losing itself.</p>
+  </div>
+  <div class="grid">
+    <article class="card span-6"><h3>For humans</h3><p>It feels like rhythm: step, step, step, pause. Then the pattern repeats.</p></article>
+    <article class="card span-6"><h3>For machines</h3><p>It becomes a stable layout: every station has the same four faces, every cycle has a built-in rest point, and every repeat can be checked.</p></article>
+  </div>
+</section>
+</main>
+
+<footer>12 by 4 Field Guide — three active faces, one quiet face, twelve stations, repeating cycle.</footer>
+
+<script>
+const labels=["Pull","Hold","Push","Rest"];
+const rows=document.getElementById("rows");
+for(let i=1;i<=12;i++){
+  const row=document.createElement("div"); row.className="row";
+  const lab=document.createElement("div"); lab.className="row-label"; lab.textContent="Station "+i; row.appendChild(lab);
+  for(let j=0;j<4;j++){
+    const s=document.createElement("div"); s.className="slot "+(j<3?"active":"rest");
+    const strong=document.createElement("strong"); strong.textContent=labels[j];
+    const span=document.createElement("span"); span.textContent=j<3?"active face":"quiet face";
+    s.appendChild(strong); s.appendChild(span); row.appendChild(s);
+  }
+  rows.appendChild(row);
+}
+</script>
+</body>
+</html>

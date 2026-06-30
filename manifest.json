@@ -1,0 +1,7 @@
+{
+  "name": "12 by 4 Field Guide",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "description": "Plain-language long page explaining 12 stations by 4 faces with 3 active faces and 1 rest face.",
+  "dependencies": []
+}
